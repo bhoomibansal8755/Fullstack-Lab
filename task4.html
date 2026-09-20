@@ -1,0 +1,334 @@
+
+<head>
+    <title>Fashion Style</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f1f5;
+        }
+
+        /* Header */
+        header {
+            background-color: #3d3737;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            color: #e9a6d2;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #eeeeee;
+        }
+
+        /* Main Layout */
+        .container {
+            display: flex;
+            min-height: 500px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background-color: #5b4b52;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            background-color: #806875;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #e9a6d2;
+            color: #3d3737;
+        }
+
+        /* Main Content */
+        .content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .content h2 {
+            color: #3d3737;
+            margin-bottom: 20px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background-color: white;
+
+            /* CSS Box Model */
+            margin: 20px;
+            padding: 20px;
+            border: 3px solid #d98bbd;
+
+            border-radius: 12px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 200px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            margin: 15px 0 10px;
+            color: #3d3737;
+        }
+
+        .product-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .price {
+            color: #b33c7d;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 12px;
+        }
+
+        .btn {
+            background-color: #b33c7d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #7d2857;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            margin-top: 40px;
+        }
+
+        .blog-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Blog Cards */
+        .blog-card {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #e0b5cf;
+            border-radius: 10px;
+        }
+
+        .blog-card h3 {
+            color: #b33c7d;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Offer */
+        .offer {
+            background-color: #ead0df;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .offer h2 {
+            color: #b33c7d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3d3737;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .sidebar a {
+                display: inline-block;
+                margin: 5px;
+                padding: 10px 15px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .product-card {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .blog-container {
+                flex-direction: column;
+            }
+
+            .blog-card {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>FASHION STYLE</h1>
+        <p>Your Style, Your Identity</p>
+    </header>
+
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>Categories</h2>
+
+            <a href="#">Home</a>
+            <a href="#">Women</a>
+            <a href="#">Men</a>
+            <a href="#">Dresses</a>
+            <a href="#">Shoes</a>
+            <a href="#">Bags</a>
+            <a href="#">Accessories</a>
+            <a href="#">Sale</a>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <h2>Featured Fashion</h2>
+
+            <!-- Product Card -->
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400"
+                     alt="Fashion Dress">
+
+                <h3>Summer Dress</h3>
+
+                <p>
+                    Elegant and comfortable dress perfect
+                    for a stylish summer look.
+                </p>
+
+                <div class="price">₹1,299</div>
+
+                <button class="btn">Shop Now</button>
+
+            </div>
+
+
+            <!-- Blog Section -->
+            <section class="blog-section">
+
+                <h2>Latest Fashion Blogs</h2>
+
+                <div class="blog-container">
+
+                    <div class="blog-card">
+                        <h3>Latest Fashion Trends</h3>
+                        <p>
+                            Explore the latest fashion trends
+                            and discover new styles for this season.
+                        </p>
+                    </div>
+
+                    <div class="blog-card">
+                        <h3>Style Your Outfit</h3>
+                        <p>
+                            Learn simple ways to mix and match
+                            clothes to create your perfect look.
+                        </p>
+                    </div>
+
+                    <div class="blog-card">
+                        <h3>Fashion Accessories</h3>
+                        <p>
+                            Complete your outfit with stylish
+                            bags, shoes, watches and accessories.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Offer -->
+            <div class="offer">
+
+                <h2>🔥 FLAT 30% OFF</h2>
+
+                <p>On Selected Fashion Collections</p>
+
+                <br>
+
+                <button class="btn">Shop Now</button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Fashion Style | Your Style, Your Identity</p>
+    </footer>
+
+</body>
+</html>

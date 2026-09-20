@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Position Property</title>
+
+    <style>
+        .box {
+            width: 150px;
+            height: 100px;
+            background-color: lightblue;
+            position: relative;
+
+            animation: positionDemo 15s infinite;
+        }
+
+        @keyframes positionDemo {
+
+            0% {
+                position: static;
+            }
+
+            20% {
+                position: relative;
+                left: 100px;
+            }
+
+            40% {
+                position: absolute;
+                left: 200px;
+                top: 100px;
+            }
+
+            60% {
+                position: fixed;
+                left: 300px;
+                top: 100px;
+            }
+
+            80% {
+                position: sticky;
+                top: 0;
+            }
+
+            100% {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        Position Property
+    </div>
+
+</body>
+</html>

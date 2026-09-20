@@ -1,0 +1,95 @@
+
+<head>
+    
+    <title>Gradient proprety</title>
+
+    <style>
+
+    .box{
+        background-color:yellow;
+        width: 700px;
+        height: 500px;
+        border: 5px solid orange;
+        border-radius: 10px;
+        display: flex; 
+        justify-content: space-around; 
+        align-items: center;
+    }
+
+    .Linear{
+        background-color:white;
+        width: 170px;
+        height: 200px;
+        border-radius:50%;
+        background: linear-gradient(
+            rgb(217, 110, 110),
+            lightblue,
+            lightgreen,
+            rgb(217, 1, 217),
+            pink,
+            orange
+        );
+    }
+
+    .Radial{
+        background-color:white;
+        
+        width: 170px;
+        height: 200px;
+        border-radius:50%;
+        background: radial-gradient(
+            rgb(217, 110, 110),
+            lightblue,
+            lightgreen,
+            rgb(217, 1, 217),
+            pink,
+            orange
+        );
+    }
+
+    .conic{
+        background-color:white;
+        width: 170px;
+        height: 200px;
+        border-radius:50%;
+        background: conic-gradient(
+            rgb(217, 110, 110),
+            lightblue,
+            lightgreen,
+            rgb(217, 1, 217),
+            pink,
+            orange
+        );
+    }
+
+    .h3{
+        text-align: right;
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <div>
+            <h3>Linear Gradient</h3>
+            <div class="Linear"></div>
+        </div>
+
+        <div>
+            <h3>Radial Gradient</h3>
+            <div class="Radial"></div>
+        </div>
+
+        <div>
+            <h3>conic Gradient</h3>
+            <div class="conic"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
