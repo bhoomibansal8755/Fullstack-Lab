@@ -1,0 +1,67 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Report</title>
+</head>
+<body>
+
+    <h1>Student Grace Marks Report</h1>
+
+    <button onclick="studentReport()">Generate Report</button>
+
+    <div id="output"></div>
+
+    <script>
+
+const students = [
+    { name: "Rahul", marks: 85 },
+    { name: "Priya", marks: 32 },
+    { name: "Amit", marks: 67 },
+    { name: "Sneha", marks: 90 },
+    { name: "Kiran", marks: 28 }
+];
+
+function studentReport() {
+
+    const updatedStudents = students.map(student => ({
+        name: student.name,
+        marks: Math.min(student.marks + 5, 100)
+    }));
+
+    const passedStudents = updatedStudents.filter(
+        student => student.marks >= 40
+    );
+
+    const totalMarks = passedStudents.reduce(
+        (total, student) => total + student.marks, 0
+    );
+
+    const average = passedStudents.length > 0
+        ? totalMarks / passedStudents.length
+        : 0;
+    let result = "<h2>Passing Students</h2>";
+
+    passedStudents.forEach(student => {
+        result += "<p>" + student.name +
+                  " - " + student.marks + " marks</p>";
+    });
+
+    (function () {
+        result += "<h2>Final Report</h2>";
+        result += "<p>Total Passing Students: " +
+                  passedStudents.length + "</p>";
+        result += "<p>Total Marks: " + totalMarks + "</p>";
+        result += "<p>Average Marks: " +
+                  average.toFixed(2) + "</p>";
+    })();
+
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
+
+
