@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 8</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightgray;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 50%;
+        }
+
+        button {
+            padding: 8px 12px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 3px;
+            border-radius: 5px;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            background: #eee;
+            padding: 10px;
+            margin: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .delete {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Task 8: Advanced DOM Manipulation</h1>
+    <div class="container">
+
+        <h2>To-Do List</h2>
+
+        <input type="text" id="taskInput"
+        placeholder="Enter your task">
+
+        <button onclick="addTask()">Add Task</button>
+
+        <ul id="taskList"></ul>
+
+    </div>
+    <script>
+
+        
+        function addTask() {
+
+            let input = document.getElementById("taskInput");
+            let task = input.value.trim();
+
+            if (task === "") {
+                alert("Enter a task");
+                return;
+            }
+
+            let li = document.createElement("li");
+
+            // Checkbox
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+
+            let span = document.createElement("span");
+            span.textContent = task;
+
+            checkbox.onchange = function() {
+                span.classList.toggle("completed");
+            };
+
+            // Move Up
+            let up = document.createElement("button");
+            up.innerHTML = "↑";
+
+            up.onclick = function() {
+                let previous = li.previousElementSibling;
+
+                if (previous) {
+                    li.parentNode.insertBefore(li, previous);
+                }
+            };
+
+            // Move Down
+            let down = document.createElement("button");
+            down.innerHTML = "↓";
+
+            down.onclick = function() {
+                let next = li.nextElementSibling;
+
+                if (next) {
+                    li.parentNode.insertBefore(next, li);
+                }
+            };
+
+            // Delete
+            let del = document.createElement("button");
+            del.innerHTML = "Delete";
+            del.className = "delete";
+
+            del.onclick = function() {
+                li.remove();
+            };
+
+            li.appendChild(checkbox);
+            li.appendChild(span);
+            li.appendChild(up);
+            li.appendChild(down);
+            li.appendChild(del);
+
+            document.getElementById("taskList").appendChild(li);
+
+            input.value = "";
+        }
+    </script>
+
+</body>
+</html>
