@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chessboard </title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: lightgray;
+        }
+
+        h1 {
+            color:black;
+        }
+
+        #chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            width: 480px;
+            margin: 30px auto;
+            border: 3px solid black;
+        }
+
+        .square {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 42px;
+        }
+
+        .white {
+            background-color: white;
+        }
+
+        .black {
+            background-color:rgb(121, 52, 3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Chessboard </h1>
+
+    <div id="chessboard"></div>
+
+    <script>
+
+        let board = document.getElementById("chessboard");
+
+        // Chess Pieces
+        let pieces = [
+            ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"],
+            ["♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"],
+            ["", "", "", "", "", "", "", ""],
+            ["", "", "", "", "", "", "", ""],
+            ["", "", "", "", "", "", "", ""],
+            ["", "", "", "", "", "", "", ""],
+            ["♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙"],
+            ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"]
+        ];
+
+        // Create Chessboard
+        for (let row = 0; row < 8; row++) {
+
+            for (let col = 0; col < 8; col++) {
+
+                let square = document.createElement("div");
+
+                square.classList.add("square");
+
+                // Alternate colors
+                if ((row + col) % 2 == 0) {
+                    square.classList.add("white");
+                }
+                else {
+                    square.classList.add("black");
+                }
+
+                // Add Chess Pieces
+                square.innerHTML = pieces[row][col];
+
+                board.appendChild(square);
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
